@@ -33,7 +33,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="#" class="block">
-                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.png" alt="Edge Realty" class="h-14 w-auto">
+                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.jpg" alt="Edge Realty" class="h-14 w-auto">
                 </a>
             </div>
             
@@ -73,7 +73,7 @@
 <div class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-6">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/hero_dubai_skyline.png') }}" alt="Dubai Skyline" class="w-full h-full object-cover transform scale-105 motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]" />
+        <img src="{{ asset('images/hero_dubai_skyline.jpg') }}" alt="Dubai Skyline" class="w-full h-full object-cover transform scale-105 motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]" fetchpriority="high" />
         <div class="absolute inset-0 bg-gradient-hero"></div>
         <div class="absolute inset-0 bg-black/5"></div>
     </div>
@@ -185,7 +185,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <!-- Project Card 1 -->
             <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer reveal">
-                <img src="{{ asset('images/featured_project_1.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Shah Rukhz">
+                <img src="{{ asset('images/featured_project_1.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Shah Rukhz" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
                 <div class="absolute bottom-0 left-0 p-10 w-full">
                     <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">OFF-PLAN</span>
@@ -197,7 +197,7 @@
 
             <!-- Project Card 2 -->
             <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer md:mt-16 reveal">
-                <img src="{{ asset('images/featured_project_2.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Edit at D3">
+                <img src="{{ asset('images/featured_project_2.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Edit at D3" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
                 <div class="absolute bottom-0 left-0 p-10 w-full">
                     <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">NEW LAUNCH</span>
@@ -209,7 +209,7 @@
 
             <!-- Project Card 3 -->
             <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer reveal">
-                <img src="{{ asset('images/featured_project_3.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Equiterra 2">
+                <img src="{{ asset('images/featured_project_3.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Equiterra 2" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
                 <div class="absolute bottom-0 left-0 p-10 w-full">
                     <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">VILLAS</span>
@@ -221,7 +221,7 @@
 
             <!-- Project Card 4 -->
             <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer md:mt-16 reveal">
-                <img src="{{ asset('images/featured_project_4.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Palace Residences">
+                <img src="{{ asset('images/featured_project_4.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Palace Residences" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
                 <div class="absolute bottom-0 left-0 p-10 w-full">
                     <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">WATERFRONT</span>
@@ -246,7 +246,7 @@
             <!-- Listing Card 1 -->
             <div class="bg-brand-dark border border-brand-border rounded-3xl hover:border-brand-gold/30 transition-all duration-500 group reveal">
                 <div class="relative h-[400px] overflow-hidden rounded-t-3xl">
-                    <img src="{{ asset('images/property_listing_1.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Penthouse">
+                    <img src="{{ asset('images/property_listing_1.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Penthouse" loading="lazy" decoding="async">
                     <div class="absolute top-6 left-6 bg-brand-dark/80 backdrop-blur px-4 py-2 text-white font-medium text-sm tracking-wider border border-white/10">
                         AED 25,000,000
                     </div>
@@ -279,7 +279,7 @@
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="{{ asset('images/agent_profile.png') }}" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent">
+                            <img src="{{ asset('images/agent_profile.jpg') }}" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent" loading="lazy">
                             <div>
                                 <p class="text-white text-sm font-medium">Alexander Smith</p>
                                 <p class="text-xs text-brand-text-muted">Luxury Consultant</p>
@@ -300,7 +300,7 @@
             <!-- Listing Card 2 -->
             <div class="bg-brand-dark border border-brand-border rounded-3xl hover:border-brand-gold/30 transition-all duration-500 group reveal delay-100">
                 <div class="relative h-[400px] overflow-hidden rounded-t-3xl">
-                    <img src="{{ asset('images/property_listing_2.png') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Luxury Villa">
+                    <img src="{{ asset('images/property_listing_2.jpg') }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Luxury Villa" loading="lazy" decoding="async">
                     <div class="absolute top-6 left-6 bg-brand-dark/80 backdrop-blur px-4 py-2 text-white font-medium text-sm tracking-wider border border-white/10">
                         AED 32,000,000
                     </div>
@@ -333,7 +333,7 @@
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="{{ asset('images/agent_profile.png') }}" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent">
+                            <img src="{{ asset('images/agent_profile.jpg') }}" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent" loading="lazy">
                             <div>
                                 <p class="text-white text-sm font-medium">Elena Rodriguez</p>
                                 <p class="text-xs text-brand-text-muted">Senior Director</p>
@@ -369,7 +369,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[600px]">
             <!-- Palm Jumeirah (Large) -->
             <div class="relative group overflow-hidden rounded-3xl cursor-pointer h-[400px] md:h-full reveal">
-                <img src="{{ asset('images/community_palm.png') }}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Palm Jumeirah">
+                <img src="{{ asset('images/community_palm.jpg') }}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Palm Jumeirah" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                 
@@ -382,7 +382,7 @@
             <div class="grid grid-rows-2 gap-6 h-[800px] md:h-full">
                 <!-- Downtown -->
                 <div class="relative group overflow-hidden rounded-3xl cursor-pointer h-full reveal delay-100">
-                    <img src="{{ asset('images/community_downtown.png') }}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Downtown Dubai">
+                    <img src="{{ asset('images/community_downtown.jpg') }}" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Downtown Dubai" loading="lazy" decoding="async">
                     <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
                     
@@ -481,10 +481,10 @@
             <!-- Image grid for Invest section -->
             <div class="grid grid-cols-2 gap-4 h-[600px] reveal delay-200">
                 <div class="mt-12 h-[80%] relative">
-                    <img src="{{ asset('images/hero_dubai_skyline.png') }}" class="absolute inset-0 w-full h-full object-cover rounded-3xl grayscale opacity-60" alt="Invest">
+                    <img src="{{ asset('images/hero_dubai_skyline.jpg') }}" class="absolute inset-0 w-full h-full object-cover rounded-3xl grayscale opacity-60" alt="Invest" loading="lazy">
                 </div>
                 <div class="h-[80%] relative">
-                    <img src="{{ asset('images/community_palm.png') }}" class="absolute inset-0 w-full h-full object-cover rounded-3xl" alt="Luxury">
+                    <img src="{{ asset('images/community_palm.jpg') }}" class="absolute inset-0 w-full h-full object-cover rounded-3xl" alt="Luxury" loading="lazy">
                 </div>
             </div>
         </div>
@@ -495,7 +495,7 @@
 <section class="relative py-32 overflow-hidden bg-brand-dark">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/community_downtown.png') }}" alt="Dubai Downtown" class="w-full h-full object-cover grayscale opacity-30" />
+        <img src="{{ asset('images/community_downtown.jpg') }}" alt="Dubai Downtown" class="w-full h-full object-cover grayscale opacity-30" loading="lazy" />
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-brand-secondary via-brand-dark to-brand-gold/5 opacity-80 z-0"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal">
