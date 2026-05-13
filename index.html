@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dubai Luxury Real Estate | Premium Properties</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS & Vite -->
+    <!-- Tailwind CSS & Vite -->
+    <link rel="stylesheet" href="public/build/assets/app-C2G_OvrC.css" />
+    <script type="module" src="public/build/assets/app-CcNNqum8.js"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
+    <!-- Preloader Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById('preloader').classList.add('fade-out');
+            }, 1500); // Cinematic delay
+        });
+
+        // Reveal animations on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+    </script>
+</head>
+<body class="bg-brand-dark text-brand-text font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Preloader -->
+    <div id="preloader" class="loader-wrapper">
+        <img src="https://mail.edgerealty.ae/public/assets/asset/logo.png" alt="Edge Realty" class="h-16 w-auto animate-pulse">
+    </div>
+
+    
+<!-- Navbar -->
+<nav x-data="{
+        scrolled: false,
+        mobileMenuOpen: false,
+        hidden: false,
+        lastScroll: 0,
+        handleScroll() {
+            const currentScroll = window.pageYOffset;
+            this.scrolled = currentScroll > 50;
+            if (currentScroll > this.lastScroll && currentScroll > 100) {
+                this.hidden = true;
+            } else {
+                this.hidden = false;
+            }
+            this.lastScroll = currentScroll;
+        }
+     }"
+     @scroll.window="handleScroll()"
+     :class="{
+        'glass py-4': scrolled,
+        'bg-transparent pt-5 pb-4': !scrolled,
+        '-translate-y-full': hidden,
+        'translate-y-0': !hidden
+     }"
+     class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out border-b border-transparent"
+     x-bind:class="{ 'border-brand-border': scrolled }">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="block">
+                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.jpg" alt="Edge Realty" class="h-14 w-auto">
+                </a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="#" class="text-white hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">Buy</a>
+                    <a href="#" class="text-brand-text-muted hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">Rent</a>
+                    <a href="#" class="text-brand-text-muted hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">Sell</a>
+                    <a href="#" class="text-brand-text-muted hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">Dubai Projects</a>
+                    <a href="#" class="text-brand-text-muted hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">Services</a>
+                    <a href="#" class="text-brand-text-muted hover:text-brand-gold transition-colors duration-300 text-sm font-medium tracking-wide">About</a>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="text-brand-text-muted hover:text-white transition-colors text-sm cursor-pointer font-medium">EN <span class="text-xs">▼</span></div>
+                <a href="#" class="glass text-white px-6 py-2.5 rounded-full transition-all duration-300 text-sm tracking-wider hover:bg-white/10 hover:border-brand-gold">
+                    CONTACT US
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="-mr-2 flex md:hidden">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-brand-text-muted hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-6">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="public/images/hero_dubai_skyline.jpg" alt="Dubai Skyline" class="w-full h-full object-cover transform scale-105 motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-hero"></div>
+        <div class="absolute inset-0 bg-black/5"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6 w-full max-w-5xl mx-auto mb-8 reveal">
+        <p class="text-brand-gold tracking-[0.3em] text-xs font-semibold mb-6 uppercase inline-flex items-center gap-3">
+            <span class="w-8 h-px bg-brand-gold"></span>
+            Dubai's #1 Luxury Real Estate Agency
+            <span class="w-8 h-px bg-brand-gold"></span>
+        </p>
+        <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-[1.05]">
+            Discover <span class="text-gradient font-medium italic">Extraordinary</span><br/> Living in Dubai
+        </h1>
+        <p class="text-lg md:text-xl text-brand-text-muted font-light max-w-2xl mx-auto tracking-wide leading-relaxed">
+            Luxury properties, investment opportunities, and premium residences across Dubai's most iconic communities.
+        </p>
+    </div>
+
+    <!-- Search UI (inside hero) -->
+    <div class="relative z-20 px-6 max-w-6xl mx-auto w-full reveal">
+        <div class="glass rounded-3xl shadow-2xl overflow-hidden">
+
+            <!-- Tabs -->
+            <div class="flex border-b border-brand-border" x-data="{ tab: 'buy' }">
+                <button @click="tab = 'buy'" :class="tab === 'buy' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300">BUY</button>
+                <button @click="tab = 'rent'" :class="tab === 'rent' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300 border-l border-brand-border">RENT</button>
+                <button @click="tab = 'offplan'" :class="tab === 'offplan' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300 border-l border-brand-border">OFF-PLAN</button>
+            </div>
+
+            <!-- Single-Row Search Bar -->
+            <div class="flex items-stretch divide-x divide-brand-border">
+
+                <!-- Property Type -->
+                <div class="flex-1 px-6 py-4 flex flex-col justify-center">
+                    <label class="block text-[10px] text-brand-gold tracking-[0.2em] uppercase mb-1">Type</label>
+                    <select class="bg-transparent text-white text-sm font-medium focus:outline-none appearance-none cursor-pointer w-full">
+                        <option class="bg-[#111315]">Apartments</option>
+                        <option class="bg-[#111315]">Villa</option>
+                        <option class="bg-[#111315]">Penthouse</option>
+                        <option class="bg-[#111315]">Townhouse</option>
+                        <option class="bg-[#111315]">Plot</option>
+                        <option class="bg-[#111315]">Commercial</option>
+                    </select>
+                </div>
+
+                <!-- Price -->
+                <div class="flex-1 px-6 py-4 flex flex-col justify-center">
+                    <label class="block text-[10px] text-brand-gold tracking-[0.2em] uppercase mb-1">Price</label>
+                    <select class="bg-transparent text-white text-sm font-medium focus:outline-none appearance-none cursor-pointer w-full">
+                        <option class="bg-[#111315]">Any Price</option>
+                        <option class="bg-[#111315]">AED 500K &ndash; 1M</option>
+                        <option class="bg-[#111315]">AED 1M &ndash; 3M</option>
+                        <option class="bg-[#111315]">AED 3M &ndash; 5M</option>
+                        <option class="bg-[#111315]">AED 5M &ndash; 10M</option>
+                        <option class="bg-[#111315]">AED 10M+</option>
+                    </select>
+                </div>
+
+                <!-- Location -->
+                <div class="flex-[2] px-6 py-4 flex flex-col justify-center">
+                    <label class="block text-[10px] text-brand-gold tracking-[0.2em] uppercase mb-1">Location</label>
+                    <input type="text" placeholder="Enter area or location..." class="bg-transparent text-white text-sm font-light placeholder-brand-text-muted focus:outline-none w-full">
+                </div>
+
+                <!-- Search Button -->
+                <div class="px-4 flex items-center">
+                    <button class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-white hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Map View Button -->
+                <div class="flex items-center">
+                    <a href="#" class="h-full glass text-white px-8 flex items-center gap-2 font-medium tracking-[0.12em] text-sm hover:bg-white/10 border-l border-brand-border transition-colors duration-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 9m0 8V9m0 0L9 7"></path></svg>
+                        MAP VIEW
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Category Links -->
+        <div class="mt-4 grid grid-cols-5 gap-3">
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">APARTMENT</a>
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">VILLA</a>
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">PLOT</a>
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">TOWNHOUSE</a>
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">COMMERCIAL</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Featured Projects -->
+<section class="py-32 px-6 bg-brand-dark">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-16 reveal">
+            <div>
+                <span class="text-brand-gold tracking-[0.2em] text-xs font-semibold mb-4 block uppercase">Exclusive Collection</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-light text-white">Featured Projects</h2>
+            </div>
+            <a href="#" class="hidden md:flex items-center text-sm tracking-widest text-brand-text-muted hover:text-brand-gold transition-colors">
+                VIEW ALL PROJECTS <span class="ml-2">→</span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Project Card 1 -->
+            <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer reveal">
+                <img src="public/images/featured_project_1.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Shah Rukhz" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 w-full">
+                    <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">OFF-PLAN</span>
+                    <h3 class="text-3xl font-heading text-white mb-2 group-hover:text-brand-gold transition-colors duration-300">Shah Rukhz by Danube</h3>
+                    <p class="text-brand-text-muted font-light mb-4">Business Bay</p>
+                    <div class="w-12 h-px bg-brand-gold transition-all duration-500 group-hover:w-full"></div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer md:mt-16 reveal">
+                <img src="public/images/featured_project_2.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="The Edit at D3" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 w-full">
+                    <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">NEW LAUNCH</span>
+                    <h3 class="text-3xl font-heading text-white mb-2 group-hover:text-brand-gold transition-colors duration-300">The Edit at D3</h3>
+                    <p class="text-brand-text-muted font-light mb-4">Dubai Design District</p>
+                    <div class="w-12 h-px bg-brand-gold transition-all duration-500 group-hover:w-full"></div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer reveal">
+                <img src="public/images/featured_project_3.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Equiterra 2" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 w-full">
+                    <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">VILLAS</span>
+                    <h3 class="text-3xl font-heading text-white mb-2 group-hover:text-brand-gold transition-colors duration-300">Equiterra 2</h3>
+                    <p class="text-brand-text-muted font-light mb-4">Dubai Hills Estate</p>
+                    <div class="w-12 h-px bg-brand-gold transition-all duration-500 group-hover:w-full"></div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="group relative h-[600px] overflow-hidden rounded-3xl cursor-pointer md:mt-16 reveal">
+                <img src="public/images/featured_project_4.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Palace Residences" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 w-full">
+                    <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-xs tracking-wider text-white border border-white/20 mb-4 inline-block">WATERFRONT</span>
+                    <h3 class="text-3xl font-heading text-white mb-2 group-hover:text-brand-gold transition-colors duration-300">Palace Residences</h3>
+                    <p class="text-brand-text-muted font-light mb-4">Dubai Creek Harbour</p>
+                    <div class="w-12 h-px bg-brand-gold transition-all duration-500 group-hover:w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Property Listings Showcase -->
+<section class="py-32 px-6 bg-brand-secondary">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal">
+            <span class="text-brand-gold tracking-[0.2em] text-xs font-semibold mb-4 block uppercase">Curated Selection</span>
+            <h2 class="text-4xl md:text-5xl font-heading font-light text-white">Premium Properties</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+            <!-- Listing Card 1 -->
+            <div class="bg-brand-dark border border-brand-border rounded-3xl hover:border-brand-gold/30 transition-all duration-500 group reveal">
+                <div class="relative h-[400px] overflow-hidden rounded-t-3xl">
+                    <img src="public/images/property_listing_1.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Penthouse" loading="lazy" decoding="async">
+                    <div class="absolute top-6 left-6 bg-brand-dark/80 backdrop-blur px-4 py-2 text-white font-medium text-sm tracking-wider border border-white/10">
+                        AED 25,000,000
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-heading text-white mb-2">Sky Collection Penthouse</h3>
+                            <p class="text-brand-text-muted font-light flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Downtown Dubai
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-8 border-y border-brand-border py-4 mb-6">
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">4</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Beds</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">5</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">6,500</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Sq Ft</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="public/images/agent_profile.jpg" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent" loading="lazy">
+                            <div>
+                                <p class="text-white text-sm font-medium">Alexander Smith</p>
+                                <p class="text-xs text-brand-text-muted">Luxury Consultant</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-white hover:border-brand-gold hover:text-brand-gold transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.533 5.303l-1.545 5.64 5.773-1.514a10.012 10.012 0 004.23.936h.002c5.505 0 9.988-4.478 9.989-9.984 0-5.504-4.484-9.985-9.992-9.985M17.26 14.322c-.288-.144-1.704-.842-1.967-.938-.264-.096-.455-.144-.647.144-.191.288-.742.938-.91 1.13-.167.192-.334.216-.622.072-1.222-.613-2.316-1.393-3.23-2.31-.796-.799-1.385-1.745-1.737-2.775-.05-.145-.008-.27.067-.367.098-.126.241-.295.361-.444.121-.149.16-.255.241-.426.08-.171.04-.321-.02-.465-.06-.144-.647-1.56-.886-2.136-.233-.561-.469-.485-.647-.494h-.551c-.192 0-.503.072-.767.361-.264.288-1.006.985-1.006 2.404 0 1.419 1.03 2.791 1.174 2.983.143.192 2.034 3.107 4.93 4.298.692.285 1.23.455 1.65.583.694.21 1.325.18 1.821.11.558-.08 1.704-.696 1.944-1.368.24-.672.24-1.248.168-1.368-.073-.12-.265-.192-.553-.336"/></svg>
+                            </button>
+                            <button class="bg-brand-gold text-brand-dark px-6 py-2 rounded-full text-sm font-medium tracking-widest hover:bg-brand-gold-soft transition-colors">
+                                DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listing Card 2 -->
+            <div class="bg-brand-dark border border-brand-border rounded-3xl hover:border-brand-gold/30 transition-all duration-500 group reveal delay-100">
+                <div class="relative h-[400px] overflow-hidden rounded-t-3xl">
+                    <img src="public/images/property_listing_2.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Luxury Villa" loading="lazy" decoding="async">
+                    <div class="absolute top-6 left-6 bg-brand-dark/80 backdrop-blur px-4 py-2 text-white font-medium text-sm tracking-wider border border-white/10">
+                        AED 32,000,000
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-heading text-white mb-2">Modern Signature Villa</h3>
+                            <p class="text-brand-text-muted font-light flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Palm Jumeirah
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-8 border-y border-brand-border py-4 mb-6">
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">6</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Beds</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">7</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-white font-heading text-xl">9,200</span>
+                            <span class="text-xs text-brand-text-muted tracking-wider uppercase">Sq Ft</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="public/images/agent_profile.jpg" class="w-12 h-12 rounded-full object-cover border border-brand-gold/30" alt="Agent" loading="lazy">
+                            <div>
+                                <p class="text-white text-sm font-medium">Elena Rodriguez</p>
+                                <p class="text-xs text-brand-text-muted">Senior Director</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-white hover:border-brand-gold hover:text-brand-gold transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.533 5.303l-1.545 5.64 5.773-1.514a10.012 10.012 0 004.23.936h.002c5.505 0 9.988-4.478 9.989-9.984 0-5.504-4.484-9.985-9.992-9.985M17.26 14.322c-.288-.144-1.704-.842-1.967-.938-.264-.096-.455-.144-.647.144-.191.288-.742.938-.91 1.13-.167.192-.334.216-.622.072-1.222-.613-2.316-1.393-3.23-2.31-.796-.799-1.385-1.745-1.737-2.775-.05-.145-.008-.27.067-.367.098-.126.241-.295.361-.444.121-.149.16-.255.241-.426.08-.171.04-.321-.02-.465-.06-.144-.647-1.56-.886-2.136-.233-.561-.469-.485-.647-.494h-.551c-.192 0-.503.072-.767.361-.264.288-1.006.985-1.006 2.404 0 1.419 1.03 2.791 1.174 2.983.143.192 2.034 3.107 4.93 4.298.692.285 1.23.455 1.65.583.694.21 1.325.18 1.821.11.558-.08 1.704-.696 1.944-1.368.24-.672.24-1.248.168-1.368-.073-.12-.265-.192-.553-.336"/></svg>
+                            </button>
+                            <button class="bg-brand-gold text-brand-dark px-6 py-2 rounded-full text-sm font-medium tracking-widest hover:bg-brand-gold-soft transition-colors">
+                                DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <a href="#" class="inline-block border-b border-brand-gold text-brand-gold pb-1 tracking-[0.2em] text-sm hover:text-white hover:border-white transition-colors duration-300">DISCOVER ALL PROPERTIES</a>
+        </div>
+    </div>
+</section>
+
+<!-- Communities Section -->
+<section class="py-32 px-6 bg-brand-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal">
+            <h2 class="text-4xl md:text-5xl font-heading font-light text-white mb-6">Iconic Communities</h2>
+            <p class="text-brand-text-muted max-w-2xl mx-auto font-light text-lg">Experience unparalleled luxury in Dubai's most sought-after destinations, each offering a unique lifestyle.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[600px]">
+            <!-- Palm Jumeirah (Large) -->
+            <div class="relative group overflow-hidden rounded-3xl cursor-pointer h-[400px] md:h-full reveal">
+                <img src="public/images/community_palm.jpg" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Palm Jumeirah" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                
+                <div class="absolute bottom-10 left-10 right-10">
+                    <h3 class="text-3xl font-heading text-white mb-3 tracking-wide">Palm Jumeirah</h3>
+                    <p class="text-brand-text-muted text-sm max-w-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out">The world's largest man-made island, offering exclusive beachfront living and ultra-luxury waterfront estates.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-rows-2 gap-6 h-[800px] md:h-full">
+                <!-- Downtown -->
+                <div class="relative group overflow-hidden rounded-3xl cursor-pointer h-full reveal delay-100">
+                    <img src="public/images/community_downtown.jpg" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" alt="Downtown Dubai" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                    
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <h3 class="text-2xl font-heading text-white mb-2 tracking-wide">Downtown Dubai</h3>
+                        <p class="text-brand-text-muted text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out">The heart of the city, home to Burj Khalifa.</p>
+                    </div>
+                </div>
+
+                <!-- Dubai Hills (Placeholder color since no image generated) -->
+                <div class="relative group overflow-hidden rounded-3xl cursor-pointer h-full reveal delay-200">
+                    <div class="w-full h-full bg-brand-secondary border border-brand-border rounded-3xl flex items-center justify-center transition-transform duration-[2000ms] group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark to-brand-secondary"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10"></div>
+                        
+                        <div class="absolute bottom-8 left-8 right-8 z-20">
+                            <h3 class="text-2xl font-heading text-white mb-2 tracking-wide">Dubai Hills Estate</h3>
+                            <p class="text-brand-text-muted text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out">Lush greenery and championship golf courses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Developers -->
+<section class="py-24 px-6 bg-brand-secondary border-y border-brand-border">
+    <div class="max-w-7xl mx-auto text-center reveal">
+        <span class="text-brand-text-muted tracking-[0.3em] text-xs font-semibold mb-12 block uppercase">Partnering with Dubai's Finest Developers</span>
+        
+        <div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-60">
+            <!-- Emaar -->
+            <h3 class="font-heading text-3xl md:text-4xl text-white tracking-widest font-light hover:text-brand-gold hover:scale-105 transition-all duration-500 cursor-pointer">EMAAR</h3>
+            <!-- Damac -->
+            <h3 class="font-heading text-3xl md:text-4xl text-white tracking-widest font-light hover:text-brand-gold hover:scale-105 transition-all duration-500 cursor-pointer">DAMAC</h3>
+            <!-- Sobha -->
+            <h3 class="font-heading text-3xl md:text-4xl text-white tracking-widest font-light hover:text-brand-gold hover:scale-105 transition-all duration-500 cursor-pointer">SOBHA</h3>
+            <!-- Nakheel -->
+            <h3 class="font-heading text-3xl md:text-4xl text-white tracking-widest font-light hover:text-brand-gold hover:scale-105 transition-all duration-500 cursor-pointer">NAKHEEL</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Why Invest in Dubai -->
+<section class="py-32 px-6 bg-brand-dark">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <span class="text-brand-gold tracking-[0.2em] text-xs font-semibold mb-4 block uppercase">Global Destination</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-light text-white mb-8 leading-tight">Why Invest in Dubai Real Estate?</h2>
+                <p class="text-brand-text-muted text-lg font-light leading-relaxed mb-10">
+                    Dubai stands as a global beacon for luxury living and secure investment. With a robust economy, visionary leadership, and unparalleled infrastructure, it offers a lifestyle unlike any other city in the world.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-brand-gold text-lg">01</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium mb-1">Tax-Free Investment</h4>
+                            <p class="text-sm text-brand-text-muted font-light">0% income and property tax for maximum returns.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-brand-gold text-lg">02</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium mb-1">High ROI</h4>
+                            <p class="text-sm text-brand-text-muted font-light">Consistent high rental yields averaging 6-8%.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-brand-gold text-lg">03</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium mb-1">Golden Visa</h4>
+                            <p class="text-sm text-brand-text-muted font-light">Long-term residency options for property investors.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-brand-gold text-lg">04</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium mb-1">Safety & Security</h4>
+                            <p class="text-sm text-brand-text-muted font-light">Ranked among the safest cities globally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image grid for Invest section -->
+            <div class="grid grid-cols-2 gap-4 h-[600px] reveal delay-200">
+                <div class="mt-12 h-[80%] relative">
+                    <img src="public/images/hero_dubai_skyline.jpg" class="absolute inset-0 w-full h-full object-cover rounded-3xl grayscale opacity-60" alt="Invest" loading="lazy">
+                </div>
+                <div class="h-[80%] relative">
+                    <img src="public/images/community_palm.jpg" class="absolute inset-0 w-full h-full object-cover rounded-3xl" alt="Luxury" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="relative py-32 overflow-hidden bg-brand-dark">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="public/images/community_downtown.jpg" alt="Dubai Downtown" class="w-full h-full object-cover grayscale opacity-30" loading="lazy" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-secondary via-brand-dark to-brand-gold/5 opacity-80 z-0"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal">
+        <h2 class="text-5xl md:text-6xl font-heading font-light text-white mb-8">Let Us Help You Find Your <span class="text-gradient italic font-medium">Perfect</span> Dubai Property</h2>
+        <p class="text-xl text-brand-text-muted font-light mb-12">Connect with our luxury property experts for a tailored consultation.</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="#" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-10 py-4 rounded-full text-sm tracking-[0.15em] font-medium hover:bg-brand-gold-soft transition-colors duration-300">
+                SCHEDULE CONSULTATION
+            </a>
+            <a href="#" class="w-full sm:w-auto flex items-center justify-center glass text-white px-10 py-4 rounded-full text-sm tracking-[0.15em] hover:bg-white/10 transition-colors duration-300">
+                <svg class="w-5 h-5 mr-3 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.533 5.303l-1.545 5.64 5.773-1.514a10.012 10.012 0 004.23.936h.002c5.505 0 9.988-4.478 9.989-9.984 0-5.504-4.484-9.985-9.992-9.985M17.26 14.322c-.288-.144-1.704-.842-1.967-.938-.264-.096-.455-.144-.647.144-.191.288-.742.938-.91 1.13-.167.192-.334.216-.622.072-1.222-.613-2.316-1.393-3.23-2.31-.796-.799-1.385-1.745-1.737-2.775-.05-.145-.008-.27.067-.367.098-.126.241-.295.361-.444.121-.149.16-.255.241-.426.08-.171.04-.321-.02-.465-.06-.144-.647-1.56-.886-2.136-.233-.561-.469-.485-.647-.494h-.551c-.192 0-.503.072-.767.361-.264.288-1.006.985-1.006 2.404 0 1.419 1.03 2.791 1.174 2.983.143.192 2.034 3.107 4.93 4.298.692.285 1.23.455 1.65.583.694.21 1.325.18 1.821.11.558-.08 1.704-.696 1.944-1.368.24-.672.24-1.248.168-1.368-.073-.12-.265-.192-.553-.336"/></svg>
+                WHATSAPP US
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-brand-dark border-t border-brand-border pt-20 pb-10 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <a href="#" class="block mb-6">
+                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.png" alt="Edge Realty" class="h-14 w-auto">
+                </a>
+                <p class="text-brand-text-muted text-sm font-light leading-relaxed mb-6">
+                    Redefining luxury real estate in Dubai with unparalleled service and an exclusive portfolio of premium properties.
+                </p>
+                <div class="flex space-x-4">
+                    <!-- Social icons placeholders -->
+                    <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-brand-text-muted hover:text-brand-gold hover:border-brand-gold transition-colors">in</a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-brand-text-muted hover:text-brand-gold hover:border-brand-gold transition-colors">ig</a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-brand-text-muted hover:text-brand-gold hover:border-brand-gold transition-colors">fb</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-heading tracking-widest text-sm mb-6">PROPERTIES</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Luxury Villas</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Penthouses</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Off-Plan Projects</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Waterfront Homes</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-heading tracking-widest text-sm mb-6">COMMUNITIES</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Palm Jumeirah</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Downtown Dubai</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Dubai Hills Estate</a></li>
+                    <li><a href="#" class="text-brand-text-muted hover:text-brand-gold text-sm transition-colors">Dubai Marina</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-heading tracking-widest text-sm mb-6">CONTACT</h4>
+                <ul class="space-y-4">
+                    <li class="text-brand-text-muted text-sm flex items-start">
+                        <span class="text-brand-gold mr-2 mt-1">•</span> Business Bay, Dubai, UAE
+                    </li>
+                    <li class="text-brand-text-muted text-sm flex items-start">
+                        <span class="text-brand-gold mr-2 mt-1">•</span> +971 4 123 4567
+                    </li>
+                    <li class="text-brand-text-muted text-sm flex items-start">
+                        <span class="text-brand-gold mr-2 mt-1">•</span> info@edgerealty.ae
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-brand-text-muted text-xs tracking-wider mb-4 md:mb-0">
+                &copy; 2026 EDGE REALTY. ALL RIGHTS RESERVED.
+            </p>
+            <div class="flex space-x-6 text-xs text-brand-text-muted tracking-wider">
+                <a href="#" class="hover:text-white transition-colors">PRIVACY POLICY</a>
+                <a href="#" class="hover:text-white transition-colors">TERMS OF SERVICE</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="#" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+</a>
+
+
+</body>
+</html>
