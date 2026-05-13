@@ -33,7 +33,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="#" class="block">
-                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.jpg" alt="Edge Realty" class="h-14 w-auto">
+                    <img src="https://mail.edgerealty.ae/public/assets/asset/logo.png" alt="Edge Realty" class="h-14 w-auto">
                 </a>
             </div>
             
