@@ -70,16 +70,16 @@
 </nav>
 
 <!-- Hero Section -->
-<div class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-6">
+<div class="relative min-h-[100svh] flex flex-col justify-start pt-[20vh] lg:pt-[25vh] overflow-hidden pb-6" x-data="{ showSearch: window.innerWidth >= 768 }" @resize.window="if (window.innerWidth >= 768) showSearch = true">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/hero_dubai_skyline.jpg') }}" alt="Dubai Skyline" class="w-full h-full object-cover transform scale-105 motion-safe:animate-[pulse_20s_ease-in-out_infinite_alternate]" fetchpriority="high" />
-        <div class="absolute inset-0 bg-gradient-hero"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0B0B0C]/40 to-[#0B0B0C]/40 md:from-[#0B0B0C]/30 md:to-[#0B0B0C]/90"></div>
         <div class="absolute inset-0 bg-black/5"></div>
     </div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 text-center px-6 w-full max-w-5xl mx-auto mb-8 reveal">
+    <div class="relative z-10 text-center px-6 w-full max-w-5xl mx-auto mb-4 reveal">
         <p class="text-brand-gold tracking-[0.3em] text-xs font-semibold mb-6 uppercase inline-flex items-center gap-3">
             <span class="w-8 h-px bg-brand-gold"></span>
             Dubai's #1 Luxury Real Estate Agency
@@ -91,21 +91,53 @@
         <p class="text-lg md:text-xl text-brand-text-muted font-light max-w-2xl mx-auto tracking-wide leading-relaxed">
             Luxury properties, investment opportunities, and premium residences across Dubai's most iconic communities.
         </p>
+
+        <!-- Explore More Button (Removed from here, moved to interactive wrapper below) -->
     </div>
 
-    <!-- Search UI (inside hero) -->
-    <div class="relative z-20 px-6 max-w-6xl mx-auto w-full reveal">
-        <div class="glass rounded-3xl shadow-2xl overflow-hidden">
+    <!-- Interactive Wrapper -->
+    <div class="relative w-full z-20 min-h-[100px]">
+        <!-- Explore More Button -->
+        <div class="absolute inset-x-0 top-4 flex justify-center pointer-events-none z-30 md:hidden" 
+             x-show="!showSearch" 
+             x-transition:enter="transition ease-out duration-700 delay-300" 
+             x-transition:enter-start="opacity-0 translate-y-4" 
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-300" 
+             x-transition:leave-start="opacity-100 translate-y-0" 
+             x-transition:leave-end="opacity-0 -translate-y-4">
+            <button @click="showSearch = true" class="pointer-events-auto glass text-white px-10 py-4 rounded-full text-sm tracking-[0.2em] font-medium hover:bg-brand-gold hover:text-brand-dark transition-all duration-500 flex items-center justify-center group">
+                EXPLORE MORE
+                <svg class="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Search UI (inside hero) -->
+        <div class="relative px-6 max-w-6xl mx-auto w-full reveal pt-4" 
+             x-show="showSearch" 
+             style="display: none;"
+             x-transition:enter="transition ease-out duration-700 delay-100" 
+             x-transition:enter-start="opacity-0 translate-y-8" 
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-500"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 translate-y-8">
+            <div class="glass rounded-3xl shadow-2xl overflow-hidden relative">
 
             <!-- Tabs -->
-            <div class="flex border-b border-brand-border" x-data="{ tab: 'buy' }">
+            <div class="flex border-b border-brand-border relative" x-data="{ tab: 'buy' }">
                 <button @click="tab = 'buy'" :class="tab === 'buy' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300">BUY</button>
                 <button @click="tab = 'rent'" :class="tab === 'rent' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300 border-l border-brand-border">RENT</button>
                 <button @click="tab = 'offplan'" :class="tab === 'offplan' ? 'text-white border-b-2 border-brand-gold' : 'text-brand-text-muted hover:text-white'" class="flex-1 py-4 font-medium tracking-[0.15em] text-sm transition-all duration-300 border-l border-brand-border">OFF-PLAN</button>
+                
+                <!-- Close Button -->
+                <button @click="showSearch = false" class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 text-brand-text-muted hover:text-brand-gold transition-all duration-300 flex items-center justify-center p-2 group">
+                    <svg class="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
 
             <!-- Single-Row Search Bar -->
-            <div class="flex items-stretch divide-x divide-brand-border">
+            <div class="flex flex-col md:flex-row md:items-stretch divide-y md:divide-y-0 md:divide-x divide-brand-border">
 
                 <!-- Property Type -->
                 <div class="flex-1 px-6 py-4 flex flex-col justify-center">
@@ -140,15 +172,16 @@
                 </div>
 
                 <!-- Search Button -->
-                <div class="px-4 flex items-center">
-                    <button class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-white hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <div class="px-6 py-4 md:px-4 md:py-0 flex items-center justify-center">
+                    <button class="w-full md:w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-white hover:border-brand-gold hover:text-brand-gold transition-all duration-300">
+                        <svg class="w-5 h-5 md:mr-0 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <span class="md:hidden font-medium tracking-widest text-sm">SEARCH</span>
                     </button>
                 </div>
 
                 <!-- Map View Button -->
                 <div class="flex items-center">
-                    <a href="#" class="h-full glass text-white px-8 flex items-center gap-2 font-medium tracking-[0.12em] text-sm hover:bg-white/10 border-l border-brand-border transition-colors duration-300">
+                    <a href="#" class="w-full md:w-auto py-4 md:py-0 md:h-full glass text-white px-8 flex items-center justify-center gap-2 font-medium tracking-[0.12em] text-sm hover:bg-white/10 md:border-l border-brand-border transition-colors duration-300">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 9m0 8V9m0 0L9 7"></path></svg>
                         MAP VIEW
                     </a>
@@ -157,14 +190,15 @@
         </div>
 
         <!-- Quick Category Links -->
-        <div class="mt-4 grid grid-cols-5 gap-3">
+        <div class="mt-4 grid grid-cols-2 md:grid-cols-5 gap-3">
             <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">APARTMENT</a>
             <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">VILLA</a>
             <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">PLOT</a>
             <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">TOWNHOUSE</a>
-            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300">COMMERCIAL</a>
+            <a href="#" class="glass text-center py-3 rounded-2xl text-sm text-brand-text-muted tracking-[0.12em] hover:text-brand-gold hover:border-brand-gold border border-brand-border transition-all duration-300 col-span-2 md:col-span-1">COMMERCIAL</a>
         </div>
     </div>
+</div>
 </div>
 
 
