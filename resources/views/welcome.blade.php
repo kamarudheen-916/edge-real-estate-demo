@@ -79,8 +79,8 @@
     </div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 text-center px-6 w-full max-w-5xl mx-auto mb-4 reveal">
-        <p class="text-brand-gold tracking-[0.3em] text-xs font-semibold mb-6 uppercase inline-flex items-center gap-3">
+    <div class="relative z-10 text-center px-6 w-full max-w-5xl mx-auto -mt-10 mb-2 reveal">
+        <p class="text-brand-gold tracking-[0.3em] text-xs font-semibold mb-2 uppercase inline-flex items-center gap-3">
             <span class="w-8 h-px bg-brand-gold"></span>
             Dubai's #1 Luxury Real Estate Agency
             <span class="w-8 h-px bg-brand-gold"></span>
